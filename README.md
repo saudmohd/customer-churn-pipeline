@@ -1,37 +1,68 @@
-## Welcome to GitHub Pages
+# Customer Churn Prediction Pipeline 🚀
 
-You can use the [editor on GitHub](https://github.com/saudmohd/coursera-test/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+This project builds a robust and scalable data engineering pipeline to predict customer churn using batch or streaming data sources. It includes ingestion, transformation, feature engineering, model training, prediction, and dashboard visualization.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## 📊 Overview
 
-### Markdown
+The pipeline:
+- Ingests customer activity data (batch or streaming)
+- Transforms and cleans the data using PySpark
+- Engineers churn-relevant features
+- Trains an XGBoost model to predict churn
+- Outputs predictions to a database or dashboard
+- Visualizes results via a Streamlit dashboard
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## ⚙️ Tech Stack
 
-```markdown
-Syntax highlighted code block
+- **Apache Kafka** / CSV for ingestion
+- **Apache Spark / Pandas** for transformation
+- **Airflow** for orchestration
+- **PostgreSQL / S3** for storage
+- **XGBoost / Scikit-learn** for modeling
+- **Streamlit** for dashboard
+- **Feast** (optional) for feature store
 
-# Header 1
-## Header 2
-### Header 3
+## 📁 Project Structure
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/saudmohd/coursera-test/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+customer-churn-pipeline/
+├── data/
+│   ├── raw/                        # Original unprocessed data (CSV)
+│   └── processed/                  # Cleaned and transformed data
+│
+├── ingestion/
+│   ├── kafka_producer.py          # Streaming data producer
+│   └── batch_ingest.py            # Batch ingestion script
+│
+├── processing/
+│   └── churn_transform.py         # Data cleaning & transformation logic (Spark/Pandas)
+│
+├── features/
+│   └── build_features.py          # Feature engineering logic
+│
+├── model/
+│   ├── train_model.py             # Model training (XGBoost)
+│   ├── evaluate_model.py          # Evaluation metrics
+│   └── model.pkl                  # Serialized trained model
+│
+├── prediction/
+│   └── batch_predict.py           # Make churn predictions on new data
+│
+├── dashboard/
+│   └── app.py                     # Streamlit dashboard for results
+│
+├── dags/
+│   └── churn_pipeline_dag.py      # Airflow DAG for orchestrating the pipeline
+│
+├── config/
+│   └── config.yaml                # Configuration values for paths, thresholds, etc.
+│
+├── utils/
+│   └── helpers.py                 # Common utility functions
+│
+├── notebooks/
+│   └── EDA.ipynb                  # Jupyter Notebook for exploration & insights
+│
+├── .gitignore
+├── requirements.txt
+├── README.md
+└── LICENSE
