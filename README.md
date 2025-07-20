@@ -21,7 +21,10 @@ The pipeline:
 - **XGBoost / Scikit-learn** for modeling
 - **Streamlit** for dashboard
 - **Feast** (optional) for feature store
+  
+## 📁 Project Structure
 
+```
 customer-churn-pipeline/
 ├── data/
 │   ├── raw/                        # Original unprocessed data (CSV)
