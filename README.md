@@ -22,8 +22,6 @@ The pipeline:
 - **Streamlit** for dashboard
 - **Feast** (optional) for feature store
 
-## 📁 Project Structure
-
 customer-churn-pipeline/
 ├── data/
 │   ├── raw/                        # Original unprocessed data (CSV)
@@ -62,7 +60,23 @@ customer-churn-pipeline/
 ├── notebooks/
 │   └── EDA.ipynb                  # Jupyter Notebook for exploration & insights
 │
-├── .gitignore
-├── requirements.txt
-├── README.md
-└── LICENSE
+├── .gitignore                     # Ignore system and virtual files
+├── requirements.txt               # Project dependencies
+├── README.md                      # Project overview and usage
+└── LICENSE                        # Project license
+
+
+## 🚀 Getting Started
+
+```bash
+# Clone the repo
+git clone https://github.com/yourusername/customer-churn-pipeline.git
+cd customer-churn-pipeline
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+
